@@ -8,8 +8,7 @@ import { Libro } from '../models/libro.model';
   providedIn: 'root',
 })
 export class LibroService {
-  private apiUrl = '/api/libros';
-
+  private apiUrl = 'http://localhost:8001/api/libros';
   constructor (private http: HttpClient) {}
   getLibros(): Observable<Libro[]> {
     return this.http.get<Libro[]>(this.apiUrl).pipe(timeout({first : 10000}));
